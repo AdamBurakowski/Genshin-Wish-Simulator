@@ -61,7 +61,8 @@ def main():
 
     print(f"You rolled {num_of_wishes} wishes and got:\n{banner_five_star_count} banner 5-stars\n{standard_five_star_count} standard 5-stars\n{banner_four_star_count} banner 4-stars\n{standard_four_star_count} standard 4-stars\n{garbage_count} garbage\n\n")
     print(f"That means you've got 5-star character once per {round(num_of_wishes / (banner_five_star_count + standard_five_star_count))} wishes") 
-    print(f"{round((banner_five_star_count / (banner_five_star_count + standard_five_star_count)*100),3)}% of them were from the banner")
+    if banner_five_star_count > 0: print(f"{round((banner_five_star_count / (banner_five_star_count + standard_five_star_count)*100),3)}% of them were from the banner")
+    else: print("You didn't get any banner 5-stars")
 
 if __name__ == "__main__":
     main()
